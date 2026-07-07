@@ -10,7 +10,7 @@ public class Exercicio_10 {
         salario = sc.nextDouble();
         aumento = salario * 15.0 / 100.0;
         novoSalario = salario + aumento;
-        
+
         System.out.printf("Novo salario: %.2f%n", novoSalario);
         sc.close();
     }
