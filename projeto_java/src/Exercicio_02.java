@@ -4,7 +4,7 @@
 import java.util.Scanner;
 import java.util.Locale;
 
-public class Exercico_02 {
+public class Exercicio_02 {
 
     public static void main(String[] args){
         Locale.setDefault(Locale.US);
