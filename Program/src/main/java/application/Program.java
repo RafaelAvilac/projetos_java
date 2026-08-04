@@ -41,5 +41,6 @@ public class Program {
         Triangulo.maior_area(areaX, areaY);
         
         sc.close();
+        
     }
 }
