@@ -16,14 +16,33 @@ public class Estoque {
         Produto produto = new Produto();
         
         System.out.println("Digite os dados do produto:");
-        System.out.println("Nome: ");
+        System.out.print("Nome: ");
         produto.nome = sc.nextLine();
         
-        System.out.println("Preço: ");
+        System.out.print("Preço: ");
         produto.preco = sc.nextDouble();
         
-        System.out.println("Quantidade: ");
+        System.out.print("Quantidade: ");
         produto.quantidade = sc.nextInt();
+        
+        System.out.println();
+        System.out.println("Produto em estoque: " + produto);
+        
+        System.out.println();
+        System.out.print("Digite a quantidade de produto para adicionado ao estoque: ");
+        
+        int quantidade = sc.nextInt();
+        produto.addProduto(quantidade);
+        
+        System.out.println("Estoque atualizado: " + produto);
+         
+        System.out.println();
+        System.out.print("Digite a quantidade de produto para removidos do estoque: ");
+        
+        quantidade = sc.nextInt();
+        produto.removerProduto(quantidade);
+        
+        System.out.println("Estoque atualizado: " + produto);
         
         sc.close();
     }
