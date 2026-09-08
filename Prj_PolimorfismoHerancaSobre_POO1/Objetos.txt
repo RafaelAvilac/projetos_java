@@ -1,0 +1,4 @@
+com.poo.prj_polimorfismoherancasobre_poo1.models.PessoaFisica@6b95977
+Nome: Teste PF CPF: 12345678900 RG: MG1111111
+Nome: Teste PF CPF: 12345678900 RG: MG1111111
+Nome: Teste PJ CNPJ: 12345678912345 Inscr. Estadual: 67576567586

@@ -13,17 +13,20 @@ public class Estoque {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
         
-        Produto produto = new Produto();
-        
         System.out.println("Digite os dados do produto:");
         System.out.print("Nome: ");
-        produto.nome = sc.nextLine();
+        String nome = sc.nextLine();
         
         System.out.print("Preço: ");
-        produto.preco = sc.nextDouble();
+        double preco = sc.nextDouble();
+   
         
-        System.out.print("Quantidade: ");
-        produto.quantidade = sc.nextInt();
+        Produto produto = new Produto(nome, preco);
+        
+        produto.setNome("Computador");
+        System.out.println("Nome atualizado: " + produto.getNome());
+        produto.setPreco(1200.00);
+        System.out.println("Preco atualizado: " + produto.getPreco());
         
         System.out.println();
         System.out.println("Produto em estoque: " + produto);
