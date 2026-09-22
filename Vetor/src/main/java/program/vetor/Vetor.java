@@ -27,6 +27,6 @@ public class Vetor {
         }
         double media = soma / n;
         
-        System.out.println(media);
+        System.out.printf("%.2f%n", media);
     }
 }
