@@ -1,0 +1,4 @@
+program\geometriadocirculo\GeometriaDoCirculo.class
+program\geometriadocirculo\services\CalculadoraCirculo.class
+program\geometriadocirculo\models\DadosSaidaCirculo.class
+program\geometriadocirculo\models\DadosEntradaCirculo.class

@@ -1,0 +1,4 @@
+program\mediaponderada\models\DadosSaidaNotas.class
+program\mediaponderada\MediaPonderada.class
+program\mediaponderada\models\DadosEntradaNotas.class
+program\mediaponderada\services\CalculadoraNotas.class

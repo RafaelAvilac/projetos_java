@@ -1,0 +1,5 @@
+program\prjexemplointerface\PrjExemploInterface.class
+program\prjexemplointerface\models\Autenticavel.class
+program\prjexemplointerface\Autenticar.class
+program\prjexemplointerface\models\Gerente.class
+program\prjexemplointerface\models\Cliente.class

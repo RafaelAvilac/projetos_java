@@ -1,0 +1,4 @@
+program\testebanco\models\Conta.class
+program\testebanco\TesteBanco.class
+program\testebanco\models\ContaCorrente.class
+program\testebanco\models\ContaPoupanca.class

@@ -21,13 +21,13 @@ public class Conexao {
     final private String driver = "com.mysql.cj.jdbc.Driver";
 
     /** URL de conexão JDBC: protocolo:subprotocolo//host:porta/banco. */
-    final private String url = "jdbc:mysql://localhost:3306/bd_pessoas";
+    final private String url = "jdbc:mysql://localhost:3306/db_pessoas";
 
     /** Usuário do banco de dados. */
     final private String usuario = "root";
 
     /** Senha do usuário do banco de dados. */
-    final private String senha = "123456";
+    final private String senha = "120366Re$";
 
     /**
      * Abre e retorna uma conexão com o banco de dados.

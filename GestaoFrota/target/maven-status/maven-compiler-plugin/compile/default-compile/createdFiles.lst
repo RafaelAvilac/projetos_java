@@ -1,0 +1,6 @@
+program\gestaofrota\models\Exportavel.class
+program\gestaofrota\models\Moto.class
+program\gestaofrota\models\Caminhao.class
+program\gestaofrota\models\Veiculo.class
+program\gestaofrota\GerenciadorFrota.class
+program\gestaofrota\GestaoFrota.class

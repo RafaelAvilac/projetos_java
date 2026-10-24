@@ -1,0 +1,4 @@
+program\pagamento\models\Funcionario.class
+program\pagamento\models\Desenvolvedor.class
+program\pagamento\models\Gerente.class
+program\pagamento\Pagamento.class

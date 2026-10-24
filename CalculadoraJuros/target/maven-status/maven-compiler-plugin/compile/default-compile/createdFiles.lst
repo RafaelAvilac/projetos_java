@@ -1,0 +1,4 @@
+program\calculadorajuros\services\CalculadoraConta.class
+program\calculadorajuros\models\DadosSaidaConta.class
+program\calculadorajuros\models\DadosEntradaConta.class
+program\calculadorajuros\CalculadoraJuros.class

@@ -1,0 +1,4 @@
+program\salario_liquido\models\DadosSaidaSalario.class
+program\salario_liquido\Salario_liquido.class
+program\salario_liquido\models\DadosEntradaSalario.class
+program\salario_liquido\services\CalculadoraSalario.class
