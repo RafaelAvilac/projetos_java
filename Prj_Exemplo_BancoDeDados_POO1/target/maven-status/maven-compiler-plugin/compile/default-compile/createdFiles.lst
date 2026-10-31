@@ -1,0 +1,5 @@
+com\poo\prj_exemplo_bancodedados_poo1\dao\PessoaDAO.class
+com\poo\prj_exemplo_bancodedados_poo1\util\Conexao.class
+com\poo\prj_exemplo_bancodedados_poo1\models\Pessoa.class
+com\poo\prj_exemplo_bancodedados_poo1\bo\PessoaBO.class
+com\poo\prj_exemplo_bancodedados_poo1\menu\Menu2.class
