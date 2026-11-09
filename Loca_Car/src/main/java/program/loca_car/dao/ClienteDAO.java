@@ -3,18 +3,21 @@ package program.loca_car.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import program.loca_car.conexao.Conexao;
 import program.loca_car.modelos.Cliente;
 
 public class ClienteDAO {
     
-    //inserir dados
+    //inserir dados (create - C)
     public void inserir(Cliente c){
         
         String sql =  "insert into clientes (nome, cnh, tipo_cnh) values (?, ?, ?)";
         
-        //O try fecha a conexão automaticamente no final
+        //try fecha a conexão automaticamente no final
         try(Connection conn = new Conexao().conectar();
             PreparedStatement stmt = conn.prepareStatement(sql)){
             
@@ -33,5 +36,39 @@ public class ClienteDAO {
     
     }
     
+    // listar todos (read - R)
+    public List<Cliente> listar(){
+        
+         //instanciar uma ArrayList<Cliente> para guardar os registros retornados.
+         List<Cliente> lista = new ArrayList<>();
+         
+         //guarda a instrução SQL que solicita todas as colunas e registros da tabela clientes.
+         String sql = "select * from clientes";
+         
+         try(Connection conn = new Conexao().conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()){
+             
+             //Percorre linha por linha da tabela clientes
+             while(rs.next()){
+                 
+                 //Cria um novo objeto Cliente para cada registro retornado e 
+                 //preenche os atributos usando os métodos setter.
+                 Cliente c = new Cliente();
+                 
+                 c.setIdCliente(rs.getInt("id_cliente"));
+                 c.setNome(rs.getString("nome"));
+                 c.setCnh(rs.getString("cnh"));
+                 c.setTipoCnh(rs.getString("tipo_cnh"));
+                 
+                 lista.add(c);//guarda o objeto preenchido na lista.
+                 
+             }
+         }catch(SQLException e){
+             System.out.println("Erro ao listar clientes: " + e.getMessage());
+         
+         }
+         return lista;
+    }
     
 }
