@@ -17,7 +17,7 @@ public class ClienteDAO {
         
         String sql =  "insert into clientes (nome, cnh, tipo_cnh) values (?, ?, ?)";
         
-        //try fecha a conexão automaticamente no final
+        //abre a conexão e prepara a consulta garantindo o fechamento  ao final da execução
         try(Connection conn = new Conexao().conectar();
             PreparedStatement stmt = conn.prepareStatement(sql)){
             
@@ -69,6 +69,31 @@ public class ClienteDAO {
          
          }
          return lista;
+    }
+    
+    // atualizar (update - U)
+    
+    public void atualizar(Cliente c){
+        
+        String sql = "update clientes set nome = ?,cnh = ?, tipo_cnh = ? where id_cliente = ?";
+        
+        try(Connection conn = new Conexao().conectar();
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            
+            stmt.setString(1, c.getNome());
+            stmt.setString(2, c.getCnh());
+            stmt.setString(3, c.getTipoCnh());
+            stmt.setInt(4, c.getIdCliente());
+            
+            stmt.executeUpdate();
+            System.out.println("Dados atualizado com sucesso.");
+        
+        }catch(SQLException e){
+        
+             System.out.println("Erro ao atualizar: " + e.getMessage());
+        
+        }
+      
     }
     
 }

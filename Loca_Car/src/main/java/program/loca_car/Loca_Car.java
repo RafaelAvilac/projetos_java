@@ -21,13 +21,13 @@ public class Loca_Car {
             
            // clienteDAO.inserir(cliente);
             
-           List<Cliente> clientes = clienteDAO.listar();
+           /*List<Cliente> clientes = clienteDAO.listar();
            for (Cliente c : clientes) {
                  System.out.println("ID: " + c.getIdCliente() + 
                        " | Nome: " + c.getNome() + 
                        " | CNH: " + c.getCnh() + 
                        " | Tipo: " + c.getTipoCnh());
-            }
+            }*/
            
     }    
 }
