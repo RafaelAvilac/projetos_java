@@ -12,6 +12,36 @@ import program.loca_car.modelos.Cliente;
 
 public class ClienteDAO {
     
+    public Cliente buscarPorId(int id) {
+        Cliente cliente = null;
+        
+        String sql = "select * from clientes where id_cliente = ?";
+        
+        try(Connection conn = new Conexao().conectar();
+           PreparedStatement stmt = conn.prepareStatement(sql)) {
+        
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            
+            if(rs.next()){
+                
+                cliente = new Cliente();
+                cliente.setIdCliente(rs.getInt("id_cliente"));
+                cliente.setNome(rs.getString("nome"));
+                cliente.setCnh(rs.getString("cnh"));
+                cliente.setTipoCnh(rs.getString("tipo_cnh"));
+            }
+           
+        }catch(SQLException e){
+           
+            System.out.println("Erro ao buscar cliente por ID: " + e.getMessage());
+        }
+    
+    
+    return cliente;
+    }
+    
+    
     //inserir dados (create - C)
     public void inserir(Cliente c){
         
@@ -94,6 +124,26 @@ public class ClienteDAO {
         
         }
       
+    }
+    
+    // deletar (delete - D)
+    public void excluir(int id){
+        
+        String sql = "delete from clientes where id_cliente = ?";
+        
+        try(Connection conn = new Conexao().conectar();
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+            System.out.println("Cliente excluido com sucesso.");
+        
+        
+        }catch(SQLException e){
+            
+             System.out.println("Erro ao deletar cliente: " + e.getMessage());
+        }
+    
     }
     
 }
