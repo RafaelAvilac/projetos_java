@@ -48,6 +48,28 @@ public class PessoaDAO
         return p;
     }
     
+    public void atualizar(Pessoa p){
+        
+        String sql = "update pessoas set nome = ?, idade = ? where id_pessoa = ?";
+        
+        try(Connection conn = new Conexao().conectar();
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            
+            stmt.setString(1, p.getNome());
+            stmt.setInt(2, p.getIdade());
+            
+            stmt.setInt(3, p.getId_pessoa());
+            
+            
+            stmt.executeUpdate();
+            System.out.println("Dados atualizado com sucesso.");
+            
+            
+         }catch(SQLException e){
+             System.out.println("Erro ao atualizar dados " + e.getMessage());
+         }
+    }
+    
     public List<Pessoa> getPessoas()
     {
         ResultSet rs;
@@ -81,7 +103,7 @@ public class PessoaDAO
     {
         try
         {
-            PreparedStatement stmt = conn.prepareStatement("DELETE FROM pessoas WHERE id_pessoa = ?");
+        PreparedStatement stmt = conn.prepareStatement("DELETE FROM pessoas WHERE id_pessoa = ?");
             stmt.setInt(1, p.getId_pessoa());
             stmt.executeUpdate();
         }
@@ -90,4 +112,5 @@ public class PessoaDAO
             ex.printStackTrace();
         }
     }
+    
 }

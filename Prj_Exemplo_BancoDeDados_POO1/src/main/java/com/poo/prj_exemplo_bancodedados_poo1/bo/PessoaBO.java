@@ -6,7 +6,6 @@ package com.poo.prj_exemplo_bancodedados_poo1.bo;
 
 import com.poo.prj_exemplo_bancodedados_poo1.dao.PessoaDAO;
 import com.poo.prj_exemplo_bancodedados_poo1.models.Pessoa;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -26,14 +25,14 @@ public class PessoaBO
     {
         if(p.getCpf().length() == 11)
         {
-            return pDAO.salvar(p);
+           return pDAO.salvar(p); 
         }
         else
         {
             System.out.println("CPF incorreto");
             p.setId_pessoa(-1);
             return p;
-        }
+        }        
     }
     
     public List<Pessoa> getPessoas()
@@ -53,4 +52,5 @@ public class PessoaBO
     {
         pDAO.excluir(p);
     }
+    
 }

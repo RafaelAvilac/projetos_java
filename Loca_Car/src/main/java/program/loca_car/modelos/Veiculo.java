@@ -1,6 +1,7 @@
 
 package program.loca_car.modelos;
 
+
 public class Veiculo {
     private int idVeiculo;
     private String placa;

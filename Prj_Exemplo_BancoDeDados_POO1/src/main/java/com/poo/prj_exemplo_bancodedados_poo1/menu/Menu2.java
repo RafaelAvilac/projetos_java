@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Iftm
+ * @author user
  */
 public class Menu2 {
     
@@ -24,7 +24,7 @@ public class Menu2 {
             System.out.println("\n========== MENU ==========");
             System.out.println("1. Cadastrar nova Pessoa");
             System.out.println("2. Consultar Pessoas");
-            System.out.println("3. Excluir Pessoa");
+            System.out.println("3. Excluir Pessoas");
             System.out.println("4. Sair");
             System.out.print("Escolha uma opcao: ");
 
@@ -79,10 +79,10 @@ public class Menu2 {
                     p2.setId_pessoa(Integer.parseInt(scanner.nextLine()));
                     pessoaBO.excluir(p2);
                     break;
-
+                    
                 case 4:
                     System.out.println("Encerrando o sistema...");
-                    break;
+                    break;                                   
 
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
@@ -92,4 +92,5 @@ public class Menu2 {
 
         scanner.close();
     }
+    
 }

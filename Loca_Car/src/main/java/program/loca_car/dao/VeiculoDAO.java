@@ -13,6 +13,41 @@ import program.loca_car.modelos.Veiculo;
 
 public class VeiculoDAO {
     
+    
+    public Veiculo buscarPorPlaca(String placa){
+        
+        Veiculo veiculo = null;
+        
+        String sql = "Select * from veiculos where placa = ?";
+        
+        try(Connection conn = new Conexao().conectar();
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            
+            stmt.setString(1, placa);
+            ResultSet rs = stmt.executeQuery();
+            
+            if(rs.next()){
+                
+                veiculo = new Veiculo();
+                
+                veiculo.setIdVeiculo(rs.getInt("id_veiculo"));
+                veiculo.setPlaca(rs.getString("placa"));
+                veiculo.setModelo(rs.getString("modelo"));
+                veiculo.setSituacao(rs.getString("situacao"));
+                
+                veiculo.setIdCategoria(rs.getInt("id_categoria"));
+                
+            }
+        }catch(SQLException e){
+        
+            System.out.println("Erro ao buscar veiculo pela placa: " + e.getMessage());
+        
+        }
+        
+        return veiculo;
+    }
+    
+    
     // inserir dados (crate - C)
     public void inserir(Veiculo v){
         
@@ -93,6 +128,25 @@ public class VeiculoDAO {
             System.out.println("Erro ao atualizar veiculo" + e.getMessage());
         }
     
+    }
+    
+    // deletar (delete - D)
+    public void excluir(int id){
+        
+        String sql = "delete from veiculos where id_veiculo = ?";
+        
+        try(Connection conn = new Conexao().conectar();
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+            System.out.println("veiculo excluido com sucesso.");
+        
+        
+        }catch(SQLException e){
+            
+             System.out.println("Erro ao deletar veiculo: " + e.getMessage());
+        }
     
     
     }
